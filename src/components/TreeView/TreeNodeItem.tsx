@@ -61,7 +61,8 @@ const TreeNodeItem = ({
       {/*  Drop Top */}
       <div
         ref={topDrop.setNodeRef}
-        className={`h-2 rounded-xl ml-18 opacity-50 transition duration-150 ${topDrop.isOver ? "opacity-100 bg-blue-500" : "bg-gray-200"}`}
+        className={`h-2 rounded-xl opacity-50 transition duration-150 ${topDrop.isOver ? "opacity-100 bg-blue-500" : "bg-gray-200"}`}
+        style={{ marginLeft: level * 32 }}
       />
 
       {/* Row */}
@@ -123,7 +124,8 @@ const TreeNodeItem = ({
       {/*  Drop Bottom */}
       <div
         ref={bottomDrop.setNodeRef}
-        className={`h-2 rounded-xl ml-18 opacity-50 transition duration-150 ${bottomDrop.isOver ? "opacity-100 bg-blue-500" : "bg-gray-200"}`}
+        className={`h-2 rounded-xl opacity-50 transition duration-150 ${bottomDrop.isOver ? "opacity-100 bg-blue-500" : "bg-gray-200"}`}
+        style={{ marginLeft: level * 32 }}
       />
 
       {/* Children */}

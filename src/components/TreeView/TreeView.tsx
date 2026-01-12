@@ -6,6 +6,7 @@ import {
   PointerSensor,
   useSensor,
   useSensors,
+  pointerWithin,
 } from "@dnd-kit/core";
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
 
@@ -167,7 +168,7 @@ const TreeView = () => {
       >
         Add Root
       </button>
-      <DndContext sensors={sensors} onDragEnd={onDragEnd}>
+      <DndContext sensors={sensors} onDragEnd={onDragEnd} collisionDetection={pointerWithin}>
         <SortableContext
           items={tree.map((n) => n.id)}
           strategy={verticalListSortingStrategy}
