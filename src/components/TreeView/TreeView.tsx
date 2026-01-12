@@ -95,7 +95,7 @@ const TreeView = () => {
     setTree((prev) => updateNode(prev, id, (n) => ({ ...n, name: newName })));
   }, []);
 
-  // ✅ parse droppable id: "nodeId__top" | "__center" | "__bottom"
+  //  parse droppable id: "nodeId__top" | "__center" | "__bottom"
   const parseDropId = useCallback((dropId: string) => {
   const str = String(dropId);
 
@@ -123,13 +123,13 @@ const TreeView = () => {
 
   if (!draggedNode || !targetNode) return;
 
-  // ❌ invalid drop into own subtree
+  //  invalid drop into own subtree
   if (isDescendant(tree, draggedId, targetId)) return;
 
   const { removed, tree: removedTree } = detachNode(tree, draggedId);
   if (!removed) return;
 
-  // ✅ CENTER => make child
+  //  CENTER => make child
   if (type === "drop-center") {
     const moved = { ...removed, parentId: targetId };
 

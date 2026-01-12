@@ -33,7 +33,7 @@ const TreeNodeItem = ({
     opacity: sortable.isDragging ? 0.5 : 1,
   };
 
-  // ✅ drop zones (ids are unique and not conflicting with sortable)
+  //  drop zones (ids are unique and not conflicting with sortable)
   const topDrop = useDroppable({ id: `drop-top:${node.id}` });
   const centerDrop = useDroppable({ id: `drop-center:${node.id}` });
   const bottomDrop = useDroppable({ id: `drop-bottom:${node.id}` });
@@ -58,7 +58,7 @@ const TreeNodeItem = ({
         centerDrop.isOver ? "outline outline-2 outline-blue-500 outline-offset-2" : ""
       }`}
     >
-      {/* ✅ Drop Top */}
+      {/*  Drop Top */}
       <div
         ref={topDrop.setNodeRef}
         className={`h-2 rounded-xl ml-18 opacity-50 transition duration-150 ${topDrop.isOver ? "opacity-100 bg-blue-500" : "bg-gray-200"}`}
@@ -80,7 +80,7 @@ const TreeNodeItem = ({
           {node.hasChildren ? (isOpen ? "▾" : "▸") : "•"}
         </button>
 
-        {/* ✅ Drop Center (Make Child) */}
+        {/*  Drop Center (Make Child) */}
         <div ref={centerDrop.setNodeRef} className="flex items-center gap-2.5 px-1 py-0.5 rounded-xl">
           <div className={`w-9 h-9 rounded-full grid place-items-center font-bold text-white shadow-md ${level === 0 ? "bg-blue-500" : "bg-green-400"}`}>
             {node.name[0]?.toUpperCase()}
@@ -120,7 +120,7 @@ const TreeNodeItem = ({
         </button>
       </div>
 
-      {/* ✅ Drop Bottom */}
+      {/*  Drop Bottom */}
       <div
         ref={bottomDrop.setNodeRef}
         className={`h-2 rounded-xl ml-18 opacity-50 transition duration-150 ${bottomDrop.isOver ? "opacity-100 bg-blue-500" : "bg-gray-200"}`}
